@@ -38,7 +38,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         return movies?.count ?? 0
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {        
         let cell =  tableView.dequeueReusableCellWithIdentifier("MovieCell", forIndexPath: indexPath) as! MovieCell
         let baseImageUrl = "http://image.tmdb.org/t/p/w500"
         
@@ -87,14 +87,13 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         });
         task.resume()
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
+   
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        print("AA")
     }
-    */
-
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        //performSegueWithIdentifier("newSegue", sender: self)
+        print("select cell")
+    }
 }

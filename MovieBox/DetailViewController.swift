@@ -16,15 +16,19 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var movieDetailBG: UIImageView!
     
     
-    var moviesData : [NSDictionary]?
+    var movieData : NSDictionary!
     var refreshControl: UIRefreshControl!
     
     
     
     override func viewDidLoad() {
-        
-        
         super.viewDidLoad()
+        
+        
+        
+        
+        
+        print(movieData)
 
         // Do any additional setup after loading the view.
     }
@@ -40,7 +44,13 @@ class DetailViewController: UIViewController {
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
+        
+    let cell = sender as! UITableViewCell
+    let indexPath = tableView.indexPathForCell(cell)
+    let movie = movies![indexPath]
+    
+    print("prepare for segue called")
+    // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
     }
     */

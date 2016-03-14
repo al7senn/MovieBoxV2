@@ -57,7 +57,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         cell.movieImage.setImageWithURL(fullMovieImageUrl!)
         cell.moviePoster.setImageWithURL(fullMoviePosterUrl!)
         
-        print(fullMoviePosterUrl)
+        
         
         return cell
     }
@@ -89,11 +89,29 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        print("AA")
+        let cell = sender as! UITableViewCell
+        let indexPath = tableView.indexPathForCell(cell)
+        let movie = movies![indexPath!.row]
+        
+        
+        
+        let detailViewController = segue.destinationViewController as! DetailViewController
+        detailViewController.movieData = movie
+        
+        
+        
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         //performSegueWithIdentifier("newSegue", sender: self)
         print("select cell")
     }
+    
+    
+   
+
+    
+    
+    
+    
 }

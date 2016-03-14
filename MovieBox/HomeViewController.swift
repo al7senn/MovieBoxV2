@@ -38,7 +38,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         fetchMovies(refreshControl)
     }
     
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -49,11 +49,11 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         if(searchActive) {
             return filtered!.count
         } else {
-        return movies?.count ?? 0
-            }
+            return movies?.count ?? 0
+        }
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {        
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell =  tableView.dequeueReusableCellWithIdentifier("MovieCell", forIndexPath: indexPath) as! MovieCell
         let movie : NSDictionary
         if searchActive {
@@ -99,11 +99,11 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
             delegateQueue: NSOperationQueue.mainQueue()
         )
         if isFirst {
-                // Display HUD right before the request is made
-                MBProgressHUD.showHUDAddedTo(self.view, animated: true)
+            // Display HUD right before the request is made
+            MBProgressHUD.showHUDAddedTo(self.view, animated: true)
             isFirst  = false
         }
-
+        
         
         let task = session.dataTaskWithRequest(request,
             completionHandler: { (dataOrNil, response, error) in
@@ -159,9 +159,9 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         self.tableView.reloadData()
     }
     
-
     
-
+    
+    
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         let cell = sender as! UITableViewCell
@@ -170,6 +170,6 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         let detailViewController = segue.destinationViewController as! DetailViewController
         detailViewController.movieData = movie
     }
-     
+    
     
 }

@@ -15,6 +15,7 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var movieDetailMeta: UILabel!
     @IBOutlet weak var movieDetailBG: UIImageView!
     
+    @IBOutlet weak var movieDetailOverview: UITextView!
     
     var movieData : NSDictionary!
     var refreshControl: UIRefreshControl!
@@ -25,7 +26,25 @@ class DetailViewController: UIViewController {
         super.viewDidLoad()
         
         
+        let movieTitle = movieData["title"] as! String
+        let movieReleaseDate = movieData["release_date"]
+        let movieMeta = movieData["release_date"] as! String
+        let movieOverview = movieData["overview"] as! String
+        let baseImageUrl = "http://image.tmdb.org/t/p/w500"
         
+        
+        let movieImageUrl = movieData["backdrop_path"] as! String
+        let moviePosterUrl = movieData["poster_path"] as! String
+        
+        let fullMovieImageUrl = NSURL(string: baseImageUrl + movieImageUrl)
+        let fullMoviePosterUrl = NSURL(string: baseImageUrl + moviePosterUrl)
+        
+        movieDetailTitle.text = movieTitle
+        movieDetailMeta.text = movieMeta
+        movieDetailOverview.text = movieOverview
+        movieDetailBG.setImageWithURL(fullMovieImageUrl!)
+        movieDetailPoster.setImageWithURL(fullMoviePosterUrl!)
+
         
         
         print(movieData)

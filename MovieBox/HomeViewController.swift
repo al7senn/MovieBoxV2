@@ -57,8 +57,6 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         cell.movieImage.setImageWithURL(fullMovieImageUrl!)
         cell.moviePoster.setImageWithURL(fullMoviePosterUrl!)
         
-        
-        
         return cell
     }
     func fetchMovies() {

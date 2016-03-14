@@ -6,7 +6,7 @@
 //  Copyright © 2016 John Pham. All rights reserved.
 //
 
-import UIKit
+import UIKit 
 
 class DetailViewController: UIViewController {
 
@@ -16,6 +16,8 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var movieDetailBG: UIImageView!
     
     @IBOutlet weak var movieDetailOverview: UITextView!
+    @IBOutlet weak var movieVoteAvg: UILabel!
+    @IBOutlet weak var movieVoteCount: UILabel!
     
     var movieData : NSDictionary!
     var refreshControl: UIRefreshControl!
@@ -27,23 +29,33 @@ class DetailViewController: UIViewController {
         
         
         let movieTitle = movieData["title"] as! String
-        let movieReleaseDate = movieData["release_date"]
+        let movieReleaseDate = movieData["release_date"] as! String
         let movieMeta = movieData["release_date"] as! String
         let movieOverview = movieData["overview"] as! String
+        let voteAvg = movieData["vote_average"] as! Float
         let baseImageUrl = "http://image.tmdb.org/t/p/w500"
         
+        let voteCount = movieData["vote_count"] as! Int
         
-        let movieImageUrl = movieData["backdrop_path"] as! String
-        let moviePosterUrl = movieData["poster_path"] as! String
         
-        let fullMovieImageUrl = NSURL(string: baseImageUrl + movieImageUrl)
-        let fullMoviePosterUrl = NSURL(string: baseImageUrl + moviePosterUrl)
+        
+        if let movieImageUrl = movieData["backdrop_path"] as? String {
+            let fullMovieImageUrl = NSURL(string: baseImageUrl + movieImageUrl)
+            movieDetailBG.setImageWithURL(fullMovieImageUrl!)
+        }
+        if let moviePosterUrl = movieData["poster_path"] as? String {
+            let fullMoviePosterUrl = NSURL(string: baseImageUrl + moviePosterUrl)
+            movieDetailPoster.setImageWithURL(fullMoviePosterUrl!)
+        }
+        
         
         movieDetailTitle.text = movieTitle
         movieDetailMeta.text = movieMeta
         movieDetailOverview.text = movieOverview
-        movieDetailBG.setImageWithURL(fullMovieImageUrl!)
-        movieDetailPoster.setImageWithURL(fullMoviePosterUrl!)
+        movieDetailMeta.text = movieReleaseDate
+        movieVoteAvg.text = String(voteAvg)
+        movieVoteCount.text = String(voteCount)
+        
 
         
         

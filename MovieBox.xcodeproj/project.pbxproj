@@ -9,11 +9,11 @@
 /* Begin PBXBuildFile section */
 		752934BE1C9461B500825633 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 752934BD1C9461B500825633 /* AppDelegate.swift */; };
 		752934C31C9461B500825633 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 752934C11C9461B500825633 /* Main.storyboard */; };
-		752934C51C9461B500825633 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 752934C41C9461B500825633 /* Assets.xcassets */; };
 		752934C81C9461B500825633 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 752934C61C9461B500825633 /* LaunchScreen.storyboard */; };
 		752934D21C94667400825633 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 752934D11C94667400825633 /* HomeViewController.swift */; };
 		752934DA1C949FE500825633 /* MovieCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 752934D91C949FE500825633 /* MovieCell.swift */; };
 		8C9DEB9CC03BD5EEE281F7A5 /* Pods_MovieBox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E141FA0B6A9E3A25A17B6767 /* Pods_MovieBox.framework */; };
+		C8078C161C973B8D0051EE65 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C8078C151C973B8D0051EE65 /* Assets.xcassets */; };
 		C86E0B251C95D5D100205AC9 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C86E0B241C95D5D100205AC9 /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -22,11 +22,11 @@
 		752934BA1C9461B500825633 /* MovieBox.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MovieBox.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		752934BD1C9461B500825633 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		752934C21C9461B500825633 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		752934C41C9461B500825633 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		752934C71C9461B500825633 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		752934C91C9461B500825633 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		752934D11C94667400825633 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		752934D91C949FE500825633 /* MovieCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieCell.swift; sourceTree = "<group>"; };
+		C8078C151C973B8D0051EE65 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C86E0B241C95D5D100205AC9 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		D1A83A834CDF9F6D01DE506C /* Pods-MovieBox.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MovieBox.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MovieBox/Pods-MovieBox.debug.xcconfig"; sourceTree = "<group>"; };
 		E141FA0B6A9E3A25A17B6767 /* Pods_MovieBox.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MovieBox.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -85,11 +85,11 @@
 				752934BD1C9461B500825633 /* AppDelegate.swift */,
 				752934C11C9461B500825633 /* Main.storyboard */,
 				C86E0B241C95D5D100205AC9 /* DetailViewController.swift */,
-				752934C41C9461B500825633 /* Assets.xcassets */,
 				752934C61C9461B500825633 /* LaunchScreen.storyboard */,
 				752934C91C9461B500825633 /* Info.plist */,
 				752934D11C94667400825633 /* HomeViewController.swift */,
 				752934D91C949FE500825633 /* MovieCell.swift */,
+				C8078C151C973B8D0051EE65 /* Assets.xcassets */,
 			);
 			path = MovieBox;
 			sourceTree = "<group>";
@@ -157,7 +157,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				752934C81C9461B500825633 /* LaunchScreen.storyboard in Resources */,
-				752934C51C9461B500825633 /* Assets.xcassets in Resources */,
+				C8078C161C973B8D0051EE65 /* Assets.xcassets in Resources */,
 				752934C31C9461B500825633 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

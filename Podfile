@@ -5,5 +5,7 @@
 
 target 'MovieBox' do
 pod 'AFNetworking', '~> 3.0'
+pod 'MBProgressHUD'
+inhibit_all_warnings!
 end
 

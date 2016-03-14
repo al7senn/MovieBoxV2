@@ -8,19 +8,33 @@
 
 import UIKit
 import AFNetworking
+import MBProgressHUD
 
 class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     @IBOutlet weak var tableView: UITableView!
 
     
     var movies : [NSDictionary]?
+    var endpoint: String!
+    
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let refreshControl = UIRefreshControl()
+        
+        
+        
         
         tableView.dataSource = self
         tableView.delegate = self
         
-        fetchMovies()
+   
+        
+        refreshControl.addTarget(self, action: "fetchMovies:", forControlEvents: UIControlEvents.ValueChanged)
+        tableView.insertSubview(refreshControl, atIndex: 0)
         
         
 
@@ -55,13 +69,13 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         cell.movieTitle.text = movieTitle
         cell.movieReleaseDate.text = movieReleaseDate
         cell.movieImage.setImageWithURL(fullMovieImageUrl!)
-        cell.moviePoster.setImageWithURL(fullMoviePosterUrl!)
+        cell.moivePosterBk.setImageWithURL(fullMoviePosterUrl!)
         
         return cell
     }
-    func fetchMovies() {
+    func fetchMovies(refreshControl: UIRefreshControl) {
         let apiKey = "a07e22bc18f5cb106bfe4cc1f83ad8ed"
-        let url = NSURL(string: "https://api.themoviedb.org/3/movie/now_playing?api_key=\(apiKey)")
+        let url = NSURL(string: "https://api.themoviedb.org/3/movie/\(endpoint)?api_key=\(apiKey)")
         let request = NSURLRequest(
             URL: url!,
             cachePolicy: NSURLRequestCachePolicy.ReloadIgnoringLocalCacheData,
@@ -72,16 +86,21 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
             delegate: nil,
             delegateQueue: NSOperationQueue.mainQueue()
         )
+        // Display HUD right before the request is made
+        MBProgressHUD.showHUDAddedTo(self.view, animated: true)
         
         let task = session.dataTaskWithRequest(request,
             completionHandler: { (dataOrNil, response, error) in
+                MBProgressHUD.hideHUDForView(self.view, animated: true)
                 if let data = dataOrNil {
                     if let responseDictionary = try! NSJSONSerialization.JSONObjectWithData (
                         data, options:[]) as? NSDictionary {
                             self.movies = responseDictionary["results"] as? [NSDictionary]
-                            self.tableView.reloadData()
+                            
                     }
                 }
+                self.tableView.reloadData()
+                refreshControl.endRefreshing()
         });
         task.resume()
     }
@@ -90,26 +109,12 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         let cell = sender as! UITableViewCell
         let indexPath = tableView.indexPathForCell(cell)
         let movie = movies![indexPath!.row]
-        
-        
-        
         let detailViewController = segue.destinationViewController as! DetailViewController
         detailViewController.movieData = movie
         
         
         
     }
-    
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        //performSegueWithIdentifier("newSegue", sender: self)
-        print("select cell")
-    }
-    
-    
-   
-
-    
-    
-    
+     
     
 }

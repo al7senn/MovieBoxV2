@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="EQa-iT-scs">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="EQa-iT-scs">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
     </dependencies>
     <scenes>
         <!--MovieBox-->
@@ -22,7 +22,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" shouldIndentWhileEditing="NO" reuseIdentifier="MovieCell" rowHeight="180" id="tIM-cR-APN" customClass="MovieCell" customModule="MovieBox" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" shouldIndentWhileEditing="NO" reuseIdentifier="MovieCell" rowHeight="180" id="tIM-cR-APN" customClass="MovieCell" customModule="MovieBox" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="92" width="320" height="180"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="tIM-cR-APN" id="7tI-9I-wnn">
@@ -36,16 +36,16 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="320" height="180"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="release_date" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kEH-hr-dBn">
-                                                    <rect key="frame" x="108" y="62" width="186" height="21"/>
+                                                    <rect key="frame" x="126" y="119" width="186" height="21"/>
                                                     <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="14"/>
                                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vVn-ye-wcF">
-                                                    <rect key="frame" x="10" y="18" width="90" height="135"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8dP-s5-bZa">
+                                                    <rect key="frame" x="8" y="14" width="110" height="150"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Movie Name" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Qz-0J-4Cp">
-                                                    <rect key="frame" x="108" y="27" width="204" height="34"/>
+                                                    <rect key="frame" x="126" y="33" width="169" height="83"/>
                                                     <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="20"/>
                                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -53,9 +53,9 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="moivePosterBk" destination="8dP-s5-bZa" id="hEO-a6-g5f"/>
                                             <outlet property="movieImage" destination="bHG-6d-boL" id="ynu-4Q-TQ7"/>
                                             <outlet property="movieImg" destination="7tI-9I-wnn" id="JD4-8f-FZ0"/>
-                                            <outlet property="moviePoster" destination="vVn-ye-wcF" id="4xP-az-jzA"/>
                                             <outlet property="movieReleaseDate" destination="kEH-hr-dBn" id="JNh-Cu-cdH"/>
                                             <outlet property="movieTitle" destination="4Qz-0J-4Cp" id="L8A-7S-7GO"/>
                                             <segue destination="ro1-hs-oNy" kind="push" id="Xim-6R-bCe"/>
@@ -66,18 +66,16 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="MovieBox" id="Jh2-Gl-syC">
-                        <barButtonItem key="rightBarButtonItem" title="Item" id="zyi-yq-QmT"/>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="MovieBox" id="Jh2-Gl-syC"/>
                     <connections>
                         <outlet property="tableView" destination="NSs-Xd-Ge3" id="Vkb-Ze-LNl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1010" y="319"/>
+            <point key="canvasLocation" x="1043" y="319"/>
         </scene>
-        <!--Detail-->
+        <!--Detail View Controller-->
         <scene sceneID="Rjw-QI-ZXG">
             <objects>
                 <viewController id="ro1-hs-oNy" customClass="DetailViewController" customModule="MovieBox" customModuleProvider="target" sceneMemberID="viewController">
@@ -89,25 +87,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uLD-eK-DP3">
+                                <rect key="frame" x="0.0" y="350" width="320" height="600"/>
+                            </scrollView>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fVD-Y8-cTG">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="800"/>
-                                <subviews>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="9xM-NE-XXS">
-                                        <rect key="frame" x="8" y="417" width="304" height="140"/>
-                                        <color key="backgroundColor" red="0.12941176470588234" green="0.13725490196078433" blue="0.15686274509803921" alpha="1" colorSpace="calibratedRGB"/>
-                                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                        <color key="textColor" red="0.85117392015706805" green="0.85117392015706805" blue="0.85117392015706805" alpha="1" colorSpace="calibratedRGB"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                    </textView>
-                                </subviews>
                                 <color key="backgroundColor" red="0.12941176470588234" green="0.13725490196078433" blue="0.15686274509803921" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zD3-xd-qrS">
                                 <rect key="frame" x="0.0" y="64" width="320" height="180"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="movieDetailBG" translatesAutoresizingMaskIntoConstraints="NO" id="g7c-Bi-KrL">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="400"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="overlay" translatesAutoresizingMaskIntoConstraints="NO" id="g7c-Bi-KrL">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="330"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UOF-AV-AJt">
                                 <rect key="frame" x="10" y="142" width="110" height="150"/>
@@ -150,26 +141,54 @@
                                 <color key="textColor" red="0.49019607843137253" green="0.47843137254901957" blue="0.81960784313725488" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="9xM-NE-XXS">
+                                <rect key="frame" x="8" y="400" width="304" height="140"/>
+                                <color key="backgroundColor" red="0.12941176470588234" green="0.13725490196078433" blue="0.15686274509803921" alpha="1" colorSpace="calibratedRGB"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <color key="textColor" red="0.85117392015706805" green="0.85117392015706805" blue="0.85117392015706805" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Star" translatesAutoresizingMaskIntoConstraints="NO" id="Vos-3h-dek">
+                                <rect key="frame" x="10" y="324" width="25" height="25"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="7.22" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y8o-jB-mrJ">
+                                <rect key="frame" x="43" y="315" width="66" height="51"/>
+                                <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="25"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="VoteCount" translatesAutoresizingMaskIntoConstraints="NO" id="Jo6-ho-4C2">
+                                <rect key="frame" x="148" y="324" width="25" height="25"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="15.000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SLD-AH-0rk">
+                                <rect key="frame" x="175" y="315" width="72" height="51"/>
+                                <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="25"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Detail" id="8Mm-Gr-Trg"/>
+                    <navigationItem key="navigationItem" id="8Mm-Gr-Trg"/>
                     <connections>
                         <outlet property="movieDetailBG" destination="zD3-xd-qrS" id="szc-b0-VeF"/>
                         <outlet property="movieDetailMeta" destination="0vr-0n-Ooc" id="gxD-eL-6RF"/>
                         <outlet property="movieDetailOverview" destination="9xM-NE-XXS" id="EhO-Xq-7lq"/>
                         <outlet property="movieDetailPoster" destination="UOF-AV-AJt" id="UMJ-sl-297"/>
                         <outlet property="movieDetailTitle" destination="grA-2o-cQP" id="iFf-ir-pFf"/>
+                        <outlet property="movieVoteAvg" destination="Y8o-jB-mrJ" id="NIt-mU-kBg"/>
+                        <outlet property="movieVoteCount" destination="SLD-AH-0rk" id="hbO-L9-UiR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8BW-zy-3Nl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1411" y="319"/>
+            <point key="canvasLocation" x="1442" y="319"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Ul2-QS-Yxz">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="EQa-iT-scs" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="MoviesNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="EQa-iT-scs" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="hvj-VO-k0L">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -182,11 +201,13 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SSf-E0-JDk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="662" y="319"/>
+            <point key="canvasLocation" x="640" y="319"/>
         </scene>
     </scenes>
     <resources>
+        <image name="Star" width="25" height="25"/>
         <image name="Untitled-1" width="750" height="485"/>
-        <image name="movieDetailBG" width="320" height="500"/>
+        <image name="VoteCount" width="50" height="50"/>
+        <image name="overlay" width="320" height="330"/>
     </resources>
 </document>

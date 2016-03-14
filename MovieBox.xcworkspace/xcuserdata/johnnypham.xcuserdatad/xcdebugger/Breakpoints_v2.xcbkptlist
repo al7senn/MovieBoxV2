@@ -2,4 +2,69 @@
 <Bucket
    type = "0"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MovieBox/AppDelegate.swift"
+            timestampString = "479672082.488119"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "12"
+            endingLineNumber = "12"
+            landmarkName = "AppDelegate"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MovieBox.AppDelegate.__deallocating_deinit"
+                  moduleName = "MovieBox"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/johnnypham/Documents/iOS/MovieBox/MovieBox/AppDelegate.swift"
+                  timestampString = "479672082.554784"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "12">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MovieBox.AppDelegate.init (MovieBox.AppDelegate.Type)() -&gt; MovieBox.AppDelegate"
+                  moduleName = "MovieBox"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/johnnypham/Documents/iOS/MovieBox/MovieBox/AppDelegate.swift"
+                  timestampString = "479672082.586896"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "12">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "main"
+                  moduleName = "MovieBox"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/johnnypham/Documents/iOS/MovieBox/MovieBox/AppDelegate.swift"
+                  timestampString = "479672082.587059"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "22">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

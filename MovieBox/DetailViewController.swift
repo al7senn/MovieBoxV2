@@ -14,7 +14,6 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var movieDetailTitle: UILabel!
     @IBOutlet weak var movieDetailMeta: UILabel!
     @IBOutlet weak var movieDetailBG: UIImageView!
-    
     @IBOutlet weak var movieDetailOverview: UITextView!
     @IBOutlet weak var movieVoteAvg: UILabel!
     @IBOutlet weak var movieVoteCount: UILabel!
@@ -34,11 +33,10 @@ class DetailViewController: UIViewController {
         let movieOverview = movieData["overview"] as! String
         let voteAvg = movieData["vote_average"] as! Float
         let baseImageUrl = "http://image.tmdb.org/t/p/w500"
-        
         let voteCount = movieData["vote_count"] as! Int
         
         
-        
+    
         if let movieImageUrl = movieData["backdrop_path"] as? String {
             let fullMovieImageUrl = NSURL(string: baseImageUrl + movieImageUrl)
             movieDetailBG.setImageWithURL(fullMovieImageUrl!)
